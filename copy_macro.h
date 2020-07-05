@@ -23,6 +23,7 @@ namespace Jing
 #define LBRACKETS (
 #define RBRACKETS )
 
+//! \note usage [] () (, ) ==> THREE_ELEMENT_COPY(v[, ], p LBRACKETS, RBRACKETS), THREE_ELEMENT_COPY((v[, ], p LBRACKETS i COMMA, RBRACKETS)); when data is indexing in operator(i, j) form, COMMA must be used. p LBRACKETS i COMMA, RBRACKETS
 #define THREE_ELEMENT_COPY(L, LR_, R, RR_)      \
   {                                             \
     L 0 LR_ = R 0 RR_;                          \

@@ -1,7 +1,7 @@
 load("f90")$
 load ("vect")$
 
-E : 1 / 2 * K * (sqrt((x(4)-x(1))^2+(x(5)-x(2))^2+(x(6)-x(3))^2) - l0)^2$
+E : 1 / 2 * K * (sqrt((x(4)-x(1))^2+(x(5)-x(2))^2+(x(6)-x(3))^2) - l0)^2 / l0$
 H : hessian(E, [x(1), x(2), x(3), x(4), x(5), x(6)])$
 pg[1] : diff(E, x(1))$
 pg[2] : diff(E, x(2))$
@@ -13,3 +13,4 @@ g : listarray(pg)$
 
 with_stdout("edge_hessian.f90", f90(H))$
 with_stdout("edge_gradient.f90", f90(g))$
+with_stdout("edge_energe.f90", f90(E))$
